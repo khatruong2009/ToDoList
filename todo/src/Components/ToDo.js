@@ -1,18 +1,22 @@
 import React from 'react';
+import Checkbox from '@material-ui/core/Checkbox';
+import Button from '@material-ui/core/Button';
 
 function ToDo({toDo, toggleComplete, removeToDo}) {
 
+  //calls the toggle complete function from app.js 
   function handleCheckboxClick() {
     toggleComplete(toDo.id)
   }
 
+  //calls the remove todo function from app.js
   function handleRemoveClick() {
     removeToDo(toDo.id)
   }
 
   return(
-    <div style={{display: "flex"}}>
-      <input onClick={handleCheckboxClick} type="checkbox"></input>
+    <div className="list-item">
+      <Checkbox color="primary" className="checkbox" onClick={handleCheckboxClick} type="checkbox"></Checkbox>
       <li
         style={{
           color:"white",
@@ -20,7 +24,7 @@ function ToDo({toDo, toggleComplete, removeToDo}) {
           textDecoration: toDo.completed? "line-through" : null
         }}
       >{toDo.task}</li>
-      <button onClick={handleRemoveClick}>X</button>
+      <Button color="secondary" size="small" onClick={handleRemoveClick}>X</Button>
     </div>
   )
 }

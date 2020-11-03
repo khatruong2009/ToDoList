@@ -10,8 +10,27 @@ form {
   align-items: center;
 }
 
+#input {
+  margin-right: 25px;
+  color: white;
+}
+
+.submit-btn {
+  margin-left: 25px;
+}
+
+.list-item {
+  display: flex;
+}
+
+.checkbox {
+  height: 25px;
+  width: 25px;
+}
+
 li {
   text-align: initial;
+  margin-right: 15px;
 }
 
 .App-logo {

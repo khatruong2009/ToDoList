@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import ToDoForm from "./Components/ToDoForm";
 import ToDoList from "./Components/ToDoList";
 
+//key for local storage
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
 function App() {
@@ -27,7 +28,9 @@ function App() {
 
   function toggleComplete(id) {
     setToDos(
+      //goes through toDos and checks to find the matching ID of the checkbox clicked
       toDos.map(toDo => {
+        //if the ID matches, the completed boolean is toggled
         if (toDo.id === id) {
           return {
             ...toDo,
@@ -40,6 +43,7 @@ function App() {
   }
 
   function removeToDo(id) {
+    //takes the toDo's ID and checks it to see if the ID matches. if the id matches, the toDo is removed from the new array
     setToDos(toDos.filter(toDo => toDo.id !== id));
   }
 
