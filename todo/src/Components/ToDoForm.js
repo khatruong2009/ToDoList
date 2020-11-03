@@ -27,9 +27,9 @@ function ToDoForm ({addToDo}) {
  }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input value={toDo.task} onChange={handleChange}></input>
-      <button></button>
+      <button type="submit">Submit</button>
     </form>
   )
 }
